@@ -40,6 +40,5 @@ int main () {
 		cout << "The roots of the quadratic equation are x1 = " << (-b / (2 * a)) << " + " << (sqrt (d) / (2 * a)) << "i and x2 = " << (-b / (2 * a)) << " - " << (sqrt (d) / (2 * a)) << "\n";
 	}
 
-	system ("pause");
 	return 0;
 }

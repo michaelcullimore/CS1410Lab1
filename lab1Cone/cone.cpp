@@ -30,6 +30,5 @@ int main () {
 	cout << "S =  pi(" << r << "^2)+ pi * " << r << " * sqrt((" << r << "^2)+(" << h << "^2)\n";
 	cout << "The surface area of the cone is " << S << "\n";
 
-	system ("pause");
 	return 0;
 }
