@@ -5,18 +5,22 @@
 #include <cmath>
 #include <conio.h>
 #include <iostream>
-#include <stdio.h>
 
 using namespace std;
 
 int main () {
 	double a, b, c, d, x1, x2;
 
-	cout << "===***===*** Lab 1 - Roots ***===***===\n";
+	cout << "===***===*** Lab 2 - Roots2 ***===***===\n";
 	cout << "A quadratic equation is given as ax^2 + bx + c = 0.\nThis program gives roots for quadratics.\n";
 
-	cout << "Enter a number for a (as long as a != 0): ";
+	cout << "Enter a number for a (as long as a is not less than 0): ";
 	cin >> a; cout << "\n";
+
+	if (a < 0) {
+		cout << "Error. Closing program. Please go home rethink your life, then come back and try again.";
+		exit (0);
+	}
 
 	cout << "Enter a number for b: ";
 	cin >> b; cout << "\n";
@@ -41,5 +45,8 @@ int main () {
 		cout << "The roots of the quadratic equation are x1 = " << (-b / (2 * a)) << " + " << (sqrt (d) / (2 * a)) << "i and x2 = " << (-b / (2 * a)) << " - " << (sqrt (d) / (2 * a)) << "\n";
 	}
 
+
+
+	system ("pause");
 	return 0;
 }
