@@ -9,16 +9,18 @@
 using namespace std;
 
 int main () {
-	double a, b, c, d, x1, x2;
+	double a, b, c, discriminant, x1, x2;
 
 	cout << "===***===*** Lab 2 - Roots2 ***===***===\n";
-	cout << "A quadratic equation is given as ax^2 + bx + c = 0.\nThis program gives roots for quadratics.\n";
+	cout << "A quadratic equation is given as ax ^ 2 + bx + c = 0.\n";
+	cout << "The quadratic function is given as (-b +- (sqrt(b^2 + 4ac))) / (2a)\n";
+	cout << "This program gives roots for quadratics.\n\n";
 
-	cout << "Enter a number for a (as long as a is not less than 0): ";
+	cout << "Enter a number for a (as long as a !=0): ";
 	cin >> a; cout << "\n";
 
-	if (a < 0) {
-		cout << "Error. Closing program. Please go home rethink your life, then come back and try again.";
+	if (a == 0) {
+		cout << "Error. Closing program. Please go home rethink your life, then come back and try again.\n";
 		exit (0);
 	}
 
@@ -28,25 +30,25 @@ int main () {
 	cout << "Enter a number for c: ";
 	cin >> c; cout << "\n";
 
-	d = (b*b) - (4 * a*c);
+	discriminant = (b*b) - (4 * a*c);
 
-	if (d >= 0) {
-		x1 = (-b + sqrt (d)) / (2 * a);
-		x2 = (-b - sqrt (d)) / (2 * a);
+	if (discriminant >= 0) {
+		x1 = (-b + sqrt (discriminant)) / (2 * a);
+		x2 = (-b - sqrt (discriminant)) / (2 * a);
 
 		cout << "(" << a << ")x^2+(" << b << ")x+(" << c << ")\n";
+		cout << "(-" << b << " + -(sqrt (" << b << " ^ 2 + 4" << a << "*" << c << "))) / (2" << a << ")\n";
 		cout << "The roots of the quadratic equation are x1 = " << x1 << " and x2 = " << x2 << "\n";
 	}
 	else {
-		d = d * (-1);
+		discriminant = discriminant * (-1);
 
 		cout << "(" << a << ")x^2+(" << b << ")x+(" << c << ")\n";
+		cout << "(-" << b << " + -(sqrt (" << b << " ^ 2 + 4*" << a << "*" << c << "))) / (2" << a << ")\n";
 		cout << "These roots are imaginary!\n";
-		cout << "The roots of the quadratic equation are x1 = " << (-b / (2 * a)) << " + " << (sqrt (d) / (2 * a)) << "i and x2 = " << (-b / (2 * a)) << " - " << (sqrt (d) / (2 * a)) << "\n";
+		cout << "The roots of the quadratic equation are x1 = (" << (-b / 2 * a) << " + " << sqrt (discriminant) / (2 * a) << "i) and x2 = (" << (-b / (2 * a)) << " - " << sqrt (discriminant) / (2 * a) << "i)\n\n";
 	}
 
-
-
-	system ("pause");
+	//system ("pause");
 	return 0;
 }
